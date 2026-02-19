@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniele Avelino | Front-End Developer</title>
+
+    <!-- Preconnect para desempenho (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Meow+Script&family=Montserrat:wght@300&family=Rajdhani:wght@400;600&family=Tilt+Neon&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Symbols (ícones de sistema) -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-25..0" />
+
+    <!-- Font Awesome (ícones adicionais) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Estilos locais (dependem das fontes acima) -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    <div class="bg-overlay default-bg" aria-hidden="true"></div>
+    <div class="hero-split-overlay" aria-hidden="true"></div>
+
+    <!-- Menu superior -->
+    <header class="container" role="banner">
+        <nav role="navigation" aria-label="Menu principal">
+            <div class="logo">Daniele Avelino</div>
+            <button id="menuBtn" class="menu-icon" aria-expanded="false" aria-controls="navLinks"
+                aria-label="Abrir menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+            <ul id="navLinks" class="nav-links" role="menubar">
+                <li role="none"><a id="link-home" href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a id="link-sobre-mim" href="#sobre-mim" role="menuitem">Sobre</a></li>
+                <li role="none"><a id="link-projetos" href="#projetos" role="menuitem">Projetos</a></li>
+                <li role="none"><a id="link-contato" href="#contato" role="menuitem">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        
+        <!-- Seção Home -->
+        <section id="home" class="page container" aria-label="Página Home">
+            <div class="home-inner">
+                <div class="sign-container" id="sign">
+                    <h1 class="neon-text">Daniele</h1>
+                    <p class="subtitle">Front-End Developer ♡</p>
+                </div>
+                <div class="power-control-wrapper">
+                    <span class="control-label">LIGAR LETREIRO</span>
+                    <label class="switch-industrial">
+                        <input type="checkbox" id="powerBtn">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre-mim" class="page container" aria-label="Página Sobre">
+            <div class="about-grid">
+                <div class="about-header-block">
+                    <h3 class="section-title">SOBRE MIM</h3>
+                    <p class="section-text">
+                        Eu sou uma desenvolvedora Front-end iniciante com muita vontade de aprender e crescer.
+                    </p>
+                </div>
+
+                <div class="about-card left-card">
+                    <h3 class="card-title">Hard Skills</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge advanced" title="Conhecimento Avançado">HTML5 <span
+                                class="tech-badge-level"></span></span>
+                        <span class="tech-badge advanced" title="Conhecimento Avançado">CSS3 <span
+                                class="tech-badge-level"></span></span>
+                        <span class="tech-badge" title="Conhecimento Intermediário">JavaScript <span
+                                class="tech-badge-level"></span></span>
+                        <span class="tech-badge" title="Conhecimento Intermediário">Bootstrap <span
+                                class="tech-badge-level"></span></span>
+                    </div>
+                    <br>
+
+                    <h3 class="card-title">Soft Skills</h3>
+                    <ul class="feature-list">
+                        <li>Comunicação clara.</li>
+                        <li>Capacidade de aprender rápido.</li>
+                        <li>Organização, responsabilidade e atenção aos detalhes.</li>
+                        <li>Resiliência e persistência na resolução de problemas</li>
+                    </ul>
+                </div>
+
+                <div class="about-card right-card">
+                    <h3 class="card-title">O que vocÊ pode esperar de mim</h3>
+                    <ul class="feature-list">
+                        <li>Desenvolvimento Front-end com foco em UX e usabilidade</li>
+                        <li>Utilização estratégica de IA para produtividade e qualidade</li>
+                        <li>Interfaces responsivas com abordagem mobile-first</li>
+                        <li>Proatividade na resolução de problemas técnicos</li>
+                        <li>Comunicação técnica clara e orientada a resultados.</li>
+                        <li>Facilidade de adaptação a novos frameworks e ferramentas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projetos" class="page container" aria-label="Página Projetos">
+            <h2 class="section-title">PROJETOS</h2>
+            <div class="project-grid">
+                <div class="project-card" id="project-card-1">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">checkroom</span>
+                    </div>
+                    <h4 class="project-title">Portal Aesthetic</h4>
+                    <p class="project-desc">Um guia visual completo sobre os principais estilos aesthetic da atualidade
+                        com referências visuais para inspiração diária.</p>
+                    <a href="https://daniieleavelino.github.io/PROJETOS/Site/index.html" class="project-button-pill">Ver Projeto</a>
+                </div>
+
+                <div class="project-card" id="project-card-2">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">quiz</span>
+                    </div>
+                    <h3 class="project-title">Quiz interativo</h3>
+                    <p class="project-desc">Descubra qual é o estilo combina com você através deste quiz interativo. O
+                        sistema analisa as suas preferências e descobre em qual estilo aesthetic você combina.</p>
+                    <a href="https://daniieleavelino.github.io/PROJETOS/Quiz/quiz.html" class="project-button-pill">Ver Projeto</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato" class="page container" aria-label="Página Contato">
+            <h2 class="section-title">CONTATO</h2>
+            <address class="contact-block" id="contact-block-main">
+                <div class="contact-item email-group">
+                    <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:daniele.avelino@outlook.com" class="contact-link">daniele.avelino@outlook.com</a>
+                    <button class="btn-copy-pill" onclick="copyEmail()" title="Copiar e-mail" aria-describedby="copy-status">
+                        <i class="fa-regular fa-copy"></i> <span>Copiar</span>
+                    </button>
+                    <div id="copy-status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    <a href="https://linkedin.com/in/daniieleavelino" target="_blank" rel="noopener noreferrer"
+                        class="contact-link">LinkedIn.com/daniieleavelino</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    <a href="https://github.com/daniieleavelino" target="_blank" rel="noopener noreferrer"
+                        class="contact-link">https://github.com/daniieleavelino/PROJETOS</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    <a href="https://wa.me/5521992855753" target="_blank" rel="noopener noreferrer" class="contact-link">(21) 99285-5753</a>
+                </div>
+            </address>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <p class="footer-text">© 2026 Daniele Avelino</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

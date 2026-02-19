@@ -1,0 +1,284 @@
+/* ============================================
+   QUIZ DE AESTHETIC - ESTILOS CSS
+   ============================================
+   Organização:
+   1. Variáveis Globais
+   2. Estilos Base (Body)
+   3. Fundo Animado (Blobs)
+   4. Card Principal
+   5. Tipografia e Gradientes
+   6. Botões Principais
+   7. Botões de Opções
+   8. Resultado
+   9. Animações Utilitárias
+   ============================================ */
+
+/* ========== 1. VARIÁVEIS GLOBAIS ========== */
+:root {
+    /* Gradiente principal (rosa/roxo) */
+    --primary-gradient: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);
+    
+    /* Cores para os blobs de fundo */
+    --blob-1: #A18CD1;
+    --blob-2: #FBC2EB;
+    
+    /* Fontes do projeto */
+    --font-heading: 'Fredoka', cursive;
+    --font-body: 'Outfit', sans-serif;
+}
+
+/* ========== 2. ESTILOS BASE DO BODY ========== */
+body {
+    /* Fonte padrão do corpo do site */
+    font-family: var(--font-body);
+    /* Cor de fundo clara e neutra */
+    background-color: #f4f7f6;
+    /* Remove scroll horizontal */
+    overflow-x: hidden;
+    /* Cor de texto padrão */
+    color: #4a4a4a;
+}
+
+/* ========== 3. FUNDO ANIMADO COM BLOBS ========== */
+/* Contêiner do fundo */
+.bg-blobs {
+    /* Posição fixa como plano de fundo */
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Sempre atrás do conteúdo */
+    z-index: 0;
+    /* Esconde blobs que saem da tela */
+    overflow: hidden;
+    /* Fundo branco */
+    background: white;
+}
+
+/* Estilos dos blobs (formas flutuantes) */
+.blob {
+    /* Formas circulares */
+    position: absolute;
+    border-radius: 50%;
+    /* Desfoque para efeito suave */
+    filter: blur(60px);
+    /* Transparência */
+    opacity: 0.6;
+    /* Animação contínua */
+    animation: float 10s infinite ease-in-out;
+}
+
+/* Blob 1: Violeta no canto superior esquerdo */
+.blob-1 { 
+    background: var(--blob-1);
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+}
+
+/* Blob 2: Rosa no canto inferior direito */
+.blob-2 { 
+    background: var(--blob-2);
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    right: -50px;
+    animation-delay: -5s;
+}
+
+/* Blob 3: Azul no centro */
+.blob-3 { 
+    background: #8fd3f4;
+    width: 250px;
+    height: 250px;
+    top: 40%;
+    left: 40%;
+    animation-delay: -2s;
+}
+
+/* Animação dos blobs flutuando */
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 50px); }
+}
+
+/* ========== 4. CARD PRINCIPAL (Glassmorphism) ========== */
+/* Estilo moderno com vidro translúcido */
+.quiz-card {
+    /* Fundo com transparência */
+    background: rgba(255, 255, 255, 0.85);
+    /* Desfoque para efeito glassmorphism */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    /* Borda translúcida */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Cantos arredondados */
+    border-radius: 30px;
+    /* Sombra suave */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    /* Largura responsiva */
+    width: 100%;
+    max-width: 550px;
+    /* Transição suave para interações */
+    transition: all 0.4s ease;
+}
+
+/* ========== 5. TIPOGRAFIA E GRADIENTES ========== */
+/* Texto com gradiente de cor */
+.gradient-text {
+    /* Gradiente de roxo a roxo mais escuro */
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    /* Aplica gradiente ao texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ========== 6. BOTÃO PRINCIPAL (Idol) ========== */
+/* Botão estilizado com gradiente */
+.btn-idol {
+    /* Gradiente de roxo */
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    /* Sem borda padrão */
+    border: none;
+    /* Texto branco */
+    color: white;
+    /* Espaçamento interno */
+    padding: 15px;
+    /* Cantos bem arredondados */
+    border-radius: 50px;
+    /* Fonte mais pesada */
+    font-weight: 600;
+    /* Sombra com cor roxo */
+    box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3);
+    /* Transição suave para hover */
+    transition: transform 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.btn-idol:hover {
+    /* Levanta o botão visualmente */
+    transform: translateY(-3px);
+    color: white;
+    /* Sombra mais intenso */
+    box-shadow: 0 15px 25px rgba(118, 75, 162, 0.4);
+}
+
+/* ========== 7. BOTÕES DE OPÇÕES (Interativos) ========== */
+/* Botão para cada opção de resposta */
+.option-btn {
+    /* Alinha o texto à esquerda */
+    text-align: left;
+    /* Fundo branco */
+    background: white;
+    /* Borda cinza clara */
+    border: 2px solid #f0f0f0;
+    /* Espaçamento interno */
+    padding: 15px 20px;
+    /* Cantos levemente arredondados */
+    border-radius: 15px;
+    /* Fonte tipo "semibold" */
+    font-weight: 500;
+    /* Cor do texto cinza */
+    color: #555;
+    /* Transição suave */
+    transition: all 0.2s;
+    /* Permite overflow para efeitos */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito ao passar o mouse sobre opção */
+.option-btn:hover {
+    /* Borda roxo claro */
+    border-color: #b2a4ea;
+    /* Fundo roxo muito claro */
+    background: #fdfbff;
+    /* Move o botão para direita */
+    transform: translateX(5px);
+    /* Texto muda para roxo */
+    color: #764ba2;
+}
+
+/* Efeito ao clicar */
+.option-btn:active {
+    /* Encolhe um pouco */
+    transform: scale(0.98);
+}
+
+/* ========== 8. RESULTADO ========== */
+/* Cabeçalho do resultado com gradiente */
+.bg-gradient-result {
+    /* Gradiente roxo */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Posicionamento relativo para filhos */
+    position: relative;
+}
+
+/* Imagem single do resultado */
+.result-img-single {
+    /* Ocupar espaço disponível */
+    width: 100%;
+    /* Altura máxima */
+    max-height: 400px;
+    /* Cobriu proporção da imagem */
+    object-fit: cover;
+    /* Cantos arredondados */
+    border-radius: 20px;
+    /* Borda branca */
+    border: 4px solid white;
+    /* Sombra */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Container de opções com transição */
+#options-container {
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse em imagens de resultado */
+.result-img:hover { 
+    transform: scale(1.1);
+}
+
+/* Alerta customizado com tema roxo claro */
+.alert-soft-purple {
+    /* Fundo roxo muito claro */
+    background-color: #f3e5f5;
+    /* Borda roxo claro */
+    border: 1px solid #e1bee7;
+    /* Texto roxo mais escuro */
+    color: #6a1b9a;
+    /* Cantos arredondados */
+    border-radius: 15px;
+}
+
+/* ========== 9. ANIMAÇÕES UTILITÁRIAS ========== */
+/* Animação de entrada suave */
+.fade-in { 
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Define a animação fade-in */
+@keyframes fadeIn {
+    from {
+        /* Inicia invisível e levemente abaixo */
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        /* Termina visível e em posição normal */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Texto com gradiente customizado */
+.text-gradient {
+    /* Gradiente rosa para rosa mais escuro */
+    background: -webkit-linear-gradient(#FF9A9E, #FECFEF);
+    /* Aplica ao texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

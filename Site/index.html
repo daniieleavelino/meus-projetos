@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore estéticas K-Style, tendências de moda 2026 e inspirações de doramas coreanos. Descubra seu estilo aesthetic perfeito.">
+    <meta name="keywords" content="K-Style, Doramas, Aesthetic, Moda Coreana, Tendências 2026">
+    <meta name="author" content="Daniele Avelino">
+    <title>Diva Aesthetic | K-Style & Doramas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- ==================== NAVEGAÇÃO ==================== -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-effect" role="navigation" aria-label="Menu principal">
+        <div class="container">
+            <a class="navbar-brand logo-font" href="#" onclick="router('home')" aria-label="Ir para página inicial">✨ Diva Aesthetic</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Abrir menu de navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav text-center" role="menubar">
+                    <li class="nav-item" role="none"><a class="nav-link" href="#" onclick="router('home')" role="menuitem">Home</a></li>
+                    <li class="nav-item" role="none"><a class="nav-link" href="#" onclick="router('estilos')" role="menuitem">Estilos</a></li>
+                    <li class="nav-item" role="none"><a class="nav-link" href="#" onclick="router('inspiracoes')" role="menuitem">Inspirações</a></li>
+                    <li class="nav-item" role="none"><a class="nav-link" href="#" onclick="router('tendencias')" role="menuitem">Tendências 2026</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+    <main id="main-content" role="main">
+        <!-- Seção Home -->
+        <section id="home" class="page-section active-section">
+            <div class="hero-full d-flex align-items-center justify-content-center text-center">
+                <div class="glass-card p-5 mx-3">
+                    <h1 class="display-3 fw-bold logo-font text-purple">Diva Aesthetic</h1>
+                    <p class="lead mt-3 mb-4">Bem-vinda ao seu universo de moda Hallyu. Explore estéticas, descubra as tendências de 2026 e encontre sua musa inspiradora nos Doramas.</p>
+                    <button class="btn btn-custom btn-lg shadow" onclick="router('estilos')">Explorar Estilos <i class="bi bi-magic"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Estilos -->
+        <section id="estilos" class="page-section d-none py-5 mt-5">
+            <div class="container">
+                <h2 class="text-center mb-5 section-title">💫 Galeria de Estilos</h2>
+                <div id="styles-container" class="row g-4">
+                    </div>
+            </div>
+        </section>
+
+        <!-- Seção Inspirações -->
+        <section id="inspiracoes" class="page-section d-none py-5 mt-5">
+            <div class="container">
+                <h2 class="text-center mb-2 section-title">📺 Musas de Dorama</h2>
+                <p class="text-center text-muted mb-5">Personagens reais que definem cada estética.</p>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0 rounded-start-pill"><i class="bi bi-search text-pink"></i></span>
+                            <input type="text" id="searchInspo" class="form-control border-start-0 rounded-end-pill shadow-none" placeholder="Pesquise por dorama ou personagem...">
+                        </div>
+                    </div>
+                </div>
+                <div id="inspirations-container" class="row g-4">
+                    </div>
+            </div>
+        </section>
+
+        <!-- Seção Tendências -->
+        <section id="tendencias" class="page-section d-none py-5 mt-5">
+            <div class="container">
+                <h2 class="text-center mb-5 section-title">🔮 Fashion Future 2026</h2>
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <img src="imagens-estilos/tendencias.webp" class="img-fluid rounded-5 shadow-lg" alt="Futuro da Moda">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-4 bg-white rounded-4 shadow-sm">
+                            <h4 class="text-purple fw-bold mb-3">O que esperar da moda Hallyu?</h4>
+                            <p>Em 2026, a tecnologia deixa de ser apenas um acessório e passa a ser o tecido da nossa realidade. Veremos o surgimento de peças modulares e materiais biodegradáveis de alta performance.</p>
+                            <hr>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="bi bi-check2-circle text-pink"></i> <strong>Moda Sustentável 3.0:</strong> Tecidos feitos de algas que purificam o ar.</li>
+                                <li class="mb-3"><i class="bi bi-check2-circle text-pink"></i> <strong>Acessórios Holo-Core:</strong> Joias de projeção holográfica.</li>
+                                <li><i class="bi bi-check2-circle text-pink"></i> <strong>Smart Fabrics:</strong> Roupas que mudam de cor via Bluetooth.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="text-center py-4 bg-white mt-5" role="contentinfo">
+        <p class="text-muted small">© 2026 Diva Aesthetic - Feito com 💜 para fãs de K-Culture.</p>
+    </footer>
+
+    <!-- ==================== BOTÃO FLUTUANTE ==================== -->
+    <a href="https://daniieleavelino.github.io/PROJETOS/Quiz/quiz.html" class="quiz-btn shadow-lg" onclick>
+        Qual o seu estilo? <br><strong>Faça o quiz</strong>
+    </a>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script Customizado -->
+    <script src="script.js"></script>
+</body>
+</html>

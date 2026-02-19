@@ -1,0 +1,143 @@
+/* ==================== VARIÁVEIS GLOBAIS ==================== */
+:root {
+    --primary-pink: #FFB7B2;
+    --primary-purple: #C7B8EA;
+    --bg-gradient: linear-gradient(135deg, #FFF5F7 0%, #F3E5F5 100%);
+    --font-heading: 'Fredoka', cursive;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* ==================== RESET E BASE ==================== */
+body {
+    font-family: var(--font-body);
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: #4A4A4A;
+    overflow-x: hidden;
+}
+
+/* ==================== NAVEGAÇÃO ==================== */
+/* Navbar e Efeito Vidro */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px) saturate(160%); /* Mais saturação e desfoque */
+    -webkit-backdrop-filter: blur(12px) saturate(160%); /* Suporte Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.logo-font { font-family: var(--font-heading); color: #6C5B7B; }
+.text-purple { color: #6C5B7B; }
+.text-pink { color: var(--primary-pink); }
+
+/* ==================== TRANSIÇÕES E ANIMAÇÕES ==================== */
+/* Transições de Página Estilo App */
+.page-section {
+    animation: fadeInApp 0.6s ease-out;
+}
+
+@keyframes fadeInApp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Destaque ao vincular Estilo -> Inspiração */
+.highlight-pulse {
+    animation: pulseBorder 2s infinite;
+}
+
+@keyframes pulseBorder {
+    0% { box-shadow: 0 0 0 0 rgba(255, 183, 178, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 183, 178, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 183, 178, 0); }
+}
+
+/* ==================== SEÇÕES PRINCIPAIS ==================== */
+/* Hero Section Home */
+.hero-full {
+    min-height: 100vh;
+    background: url('images/fundo.webp') center/cover no-repeat;
+    padding-top: 80px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 40px;
+    border: 1px solid white;
+    max-width: 700px;
+}
+
+/* ==================== COMPONENTES ==================== */
+/* Botão Customizado */
+.btn-custom {
+    background-color: var(--primary-pink);
+    color: white;
+    border-radius: 50px;
+    padding: 12px 35px;
+    border: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #ff9a94;
+    transform: scale(1.05);
+    color: white;
+}
+
+/* Cards de Estilo */
+.style-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.style-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(199, 184, 234, 0.3);
+}
+
+.card-img-top {
+    height: 380px;
+    object-fit: cover;
+}
+
+/* Cards de Inspiração Dorama */
+.inspo-card-v2 {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+    transition: 0.5s;
+}
+
+.inspo-card-v2 img {
+    transition: 0.5s;
+}
+
+.inspo-card-v2:hover img { transform: scale(1.1); }
+
+/* Centralizar cards que sobrarem nas linhas */
+#styles-container, #inspirations-container {
+    justify-content: center !important;
+}
+
+/* Botão Quiz Flutuante */
+.quiz-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #FF9A9E, #FECFEF);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    z-index: 1000;
+    line-height: 1.2;
+    border: 2px solid white;
+}
+
+.quiz-btn:hover { color: white; transform: scale(1.1); }
