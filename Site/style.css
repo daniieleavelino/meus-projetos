@@ -55,7 +55,7 @@ body {
 /* Hero Section Home */
 .hero-full {
     min-height: 100vh;
-    background: url('images/fundo.webp') center/cover no-repeat;
+    background: url('imagens-estilos/fundo.webp') center/cover no-repeat;
     padding-top: 80px;
 }
 

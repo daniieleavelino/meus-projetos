@@ -12,9 +12,9 @@ Confira os projetos online clicando em **"Ver Projeto"**.
 
 | Projeto | Descrição | Tecnologias | Link |
 | :--- | :--- | :--- | :--- |
-| **1️⃣Portfólio Pessoal** | Minha página de apresentação com estética Neon. | HTML, CSS Avançado (Efeitos de luz), JavaScript | [🔗 Ver Projeto](https://daniieleavelino.github.io/PROJETOS/Portfolio/index.html)) |
-| **2️⃣ K-Culture Landing Page** | Site responsivo e minimalista focado na cultura pop coreana. Apresenta 20 estilos visuais com layout moderno. | HTML Semântico, CSS Grid/Flexbox, Design Responsivo | [🔗 Ver Projeto](https://daniieleavelino.github.io/PROJETOS/Site/index.html) |
-| **3️⃣Quiz Aesthetic** | Uma aplicação interativa que descobre o estilo visual do usuário através de perguntas lógicas. Foco em lógica de programação e interatividade. | HTML5, CSS3 (Animações), JavaScript (Lógica e DOM) | [🔗 Ver Projeto](https://daniieleavelino.github.io/PROJETOS/Quiz/quiz.html) |
+| **1️⃣Portfólio Pessoal** | Minha página de apresentação com estética Neon. | HTML, CSS Avançado (Efeitos de luz), JavaScript | [🔗 Ver Projeto](https://daniieleavelino.github.io/meus-projetos/Portfolio/index.html)) |
+| **2️⃣ K-Culture Landing Page** | Site responsivo e minimalista focado na cultura pop coreana. Apresenta 20 estilos visuais com layout moderno. | HTML Semântico, CSS Grid/Flexbox, Design Responsivo | [🔗 Ver Projeto](https://daniieleavelino.github.io/meus-projetos/Site/index.html) |
+| **3️⃣Quiz Aesthetic** | Uma aplicação interativa que descobre o estilo visual do usuário através de perguntas lógicas. Foco em lógica de programação e interatividade. | HTML5, CSS3 (Animações), JavaScript (Lógica e DOM) | [🔗 Ver Projeto](https://daniieleavelino.github.io/meus-projetos/Quiz/quiz.html) |
 
 ---
 
