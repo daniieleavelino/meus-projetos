@@ -733,7 +733,7 @@ input:checked+.slider:before {
     }
 
    .sign-container {
-    transform: translateY(10vh);
+    transform: translateY(15vh);
     align-self: center;
 }
 
