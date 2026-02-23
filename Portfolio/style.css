@@ -12,7 +12,7 @@
     --font-corpo: 'montserrat', sans-serif;
 
     --transition-duration: 0.35s;
-
+}
 
 /* ==================== RESET E BASE ==================== */
 * {
@@ -733,7 +733,7 @@ input:checked+.slider:before {
     }
 
    .sign-container {
-    transform: translateY(27vh);
+    transform: translateY(20vh);
     align-self: center;
 }
 
