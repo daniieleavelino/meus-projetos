@@ -1,4 +1,5 @@
-/* ==================== VARIÁVEIS DE CORES (PALETA NEON) ==================== */
+/* ==================== VARIÁVEIS ==================== */
+
 :root {
     /*CORES*/
     --bg-color: #0a0a0c;
@@ -80,7 +81,7 @@ body {
 
 .bg-overlay.default-bg {
     background: 
-        linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0)75%), 
+        linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 75%), 
         url('images/fundo-desktop.webp');
     background-size: contain;
     background-position: center;
@@ -150,7 +151,7 @@ nav {
     text-shadow: 0 0 10px var(--neon-pink), 0 0 20px rgba(255, 0, 255, 0.4);
 }
 
-/* Botão de Menu */
+/* Botão de Menu (Desktop default: hidden) */
 .menu-icon {
     display: none;
     background: none;
@@ -171,8 +172,7 @@ nav {
 /* ==================== ESTRUTURA E TRANSIÇÃO ==================== */
 .page {
     position: fixed;
-    inset: 0;
-    display: none;
+    inset: 0; /* inicialmente invisível via visibility/opacity */
     visibility: hidden;
     z-index: 10;
     display: flex;
@@ -250,7 +250,7 @@ nav {
 
 .subtitle {
     font-family: var(--font-sub);
-    font-size: clamp(1rem, 2.2vw, 1.5rem);
+    font-size: 1.4rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: #555;
@@ -298,7 +298,7 @@ nav {
 
 .control-label {
     font-family: var(--font-sub);
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: rgba(255, 255, 255, 0.3);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -677,7 +677,36 @@ input:checked+.slider:before {
     border-top: 1px solid rgba(0, 255, 255, 0.05);
 }
 
-/* ==================== ==========================================RESPONSIVIDADE & MOBILE MENU ==============================================================================*/
+/* ==================== RESPONSIVIDADE ==================== */
+
+/* ==================== NOTEBOOK ==================== */
+@media (max-width: 1600px) {
+
+    .bg-overlay.default-bg {
+        background:
+            linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%),
+            url('images/fundo-notebook.webp');
+
+        background-size: cover;
+        background-position: bottom;
+    }
+
+    .home-inner {
+        margin-left: 70px;
+        max-width: 700px;
+    }
+
+    .neon-text {
+        font-size: 7rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 0.4em;
+    }
+}
+
+/* ==================== MOBILE ==================== */
 @media (max-width: 768px) {
     .bg-overlay.default-bg {
     background: 
@@ -693,56 +722,59 @@ input:checked+.slider:before {
         font-size: 0.8rem;
     }
 
-    .neon-text {
-        font-size: clamp(5rem, 8vw, 4.9rem);
-        transform: rotate(-5deg);
-        flex-direction: column;
-        justify-content: 100px;
-        align-items: center;
-        
+   .neon-text {
+        font-size: 5rem;
+        transform: rotate(-5deg); 
+        text-align: center;
+        line-height: 0.9;
+        margin-bottom: 10px;
     }
 
     .subtitle {
-        font-size: clamp(1rem, 2vw, 1.05rem);
-        letter-spacing: 0.3em;
-    
+        margin-top: 0;
+        text-align: center;
+        font-size: 1rem;
+        letter-spacing: 0.2em;
     }
 
     /* HOME */
-    #home {
-        height: 100dvh;
-        min-height: 100dvh;
-        overflow: hidden; /* Remove o scroll apenas na home */
+    #home {        
+        padding: 0; 
+        margin: 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 0px;
-        margin-top: 0px;
-        padding-bottom: 15vh;
+        justify-content: center; 
+        align-items: center;     
+        height: 100dvh;          
+        width: 100%;
+        padding-top: 30vh; 
     }
 
-   .home-inner {
+    .home-inner {
         margin: 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: auto;
     }
 
-   .sign-container {
-    transform: translateY(15vh);
-    align-self: center;
-}
+    .sign-container {
+        margin-top: 0 !important; 
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 
 
     /* BOTÃO MOBILE*/
     #home .power-control-wrapper {
         position: fixed;
         bottom: 60px;
-        left: 20PX;
+        left: 20px;
         margin: 0;    
         display: flex;
         flex-direction: column;
@@ -754,14 +786,11 @@ input:checked+.slider:before {
 
     /*SOBRE MIM*/
     #sobre-mim .about-card {
-        flex: 1 1 100%;
-        /* Ocupa 100% da largura */
-        width: 50%;
-        /* Garante que o card ocupe toda a largura possível */
+        flex: 1 1 100%;        
+        width: 50%;        
         padding: 25px;
         box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
-        margin: 0;
-        /* Remove margens extras */
+        margin: 0;        
     }
 
     .about-header-block .section-title {
@@ -783,7 +812,7 @@ input:checked+.slider:before {
         padding: 25px;
     }
 
-    /* CORREÇÃO CONTATO: Centralizado */
+    /* CONTATO */
     .contact-block {
         max-width: 100%;
         padding: 25px;
@@ -867,5 +896,4 @@ input:checked+.slider:before {
         width: 100%;
         color: #ccc;
     }
-
 }
