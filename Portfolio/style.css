@@ -13,6 +13,7 @@
     --font-corpo: 'montserrat', sans-serif;
 
     --transition-duration: 0.35s;
+    --footer-offset: 56px;
 }
 
 /* ==================== RESET E BASE ==================== */
@@ -211,18 +212,22 @@ nav {
 /* ==================== HOME ==================== */
 #home {
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 0;
-    min-height: 100vh;
+    align-items: stretch;
+    padding: 0 20px;
+    min-height: 100dvh;
 }
 
 .home-inner {
+    width: min(100%, 1200px);
+    min-height: 100dvh;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
-    gap: 18px;
-    max-width: 800px;
-    margin-left: 100px;
+    gap: 10px;
+    padding-top: clamp(80px, 10vh, 110px);
+    padding-bottom: clamp(110px, 16vh, 150px);
 }
 
 .sign-container {
@@ -231,7 +236,7 @@ nav {
 
 .neon-text {
     font-family: var(--font-display);
-    font-size: 8rem;
+    font-size: clamp(5rem, 9vw, 7.5rem);
     color: #333;
     opacity: 0.3;
     line-height: 1;
@@ -250,13 +255,13 @@ nav {
 
 .subtitle {
     font-family: var(--font-sub);
-    font-size: 1.4rem;
-    letter-spacing: 0.3em;
+    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+    letter-spacing: clamp(0.14em, 0.28vw, 0.22em);
     text-transform: uppercase;
     color: #555;
     font-weight: 300;
     opacity: 0.6;
-    margin-top: 20px;
+    margin-top: 4px;
     text-align: left;
 }
 
@@ -286,8 +291,8 @@ nav {
 /* CONTAINER DO BOTÃO LIGA/DESLIGA - DESKTOP */
 .power-control-wrapper {
     position: fixed;
-    bottom: 40px;
-    left: 1vw;
+    bottom: calc(var(--footer-offset) + 14px + env(safe-area-inset-bottom));
+    left: 20px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -692,17 +697,18 @@ input:checked+.slider:before {
     }
 
     .home-inner {
-        margin-left: 70px;
-        max-width: 700px;
+        width: min(100%, 1000px);
+        padding-top: clamp(76px, 9vh, 100px);
+        padding-bottom: clamp(100px, 15vh, 140px);
     }
 
     .neon-text {
-        font-size: 7rem;
+        font-size: clamp(4.6rem, 8.6vw, 6.8rem);
     }
 
     .subtitle {
-        font-size: 1.1rem;
-        letter-spacing: 0.4em;
+        font-size: clamp(0.92rem, 1.4vw, 1.05rem);
+        letter-spacing: clamp(0.14em, 0.26vw, 0.2em);
     }
 }
 
@@ -723,41 +729,35 @@ input:checked+.slider:before {
     }
 
    .neon-text {
-        font-size: 5rem;
-        transform: rotate(-5deg); 
+        font-size: clamp(3.9rem, 18vw, 5rem);
+        transform: rotate(-4deg);
         text-align: center;
-        line-height: 0.9;
-        margin-bottom: 10px;
+        line-height: 0.92;
+        margin-bottom: 6px;
     }
 
     .subtitle {
         margin-top: 0;
         text-align: center;
-        font-size: 1rem;
-        letter-spacing: 0.2em;
+        font-size: clamp(0.78rem, 3.7vw, 0.95rem);
+        letter-spacing: clamp(0.1em, 0.42vw, 0.16em);
     }
 
     /* HOME */
-    #home {        
-        padding: 0; 
+    #home {
         margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        align-items: center;     
-        height: 100dvh;          
         width: 100%;
-        padding-top: 30vh; 
+        padding: 0 16px;
     }
 
     .home-inner {
+        min-height: 100dvh;
+        width: 100%;
         margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
+        padding-top: clamp(74px, 12vh, 100px);
+        padding-bottom: calc(var(--footer-offset) + 44px + env(safe-area-inset-bottom));
         align-items: center;
         justify-content: center;
-        width: 100%;
     }
 
     .sign-container {
@@ -773,8 +773,7 @@ input:checked+.slider:before {
     /* BOTÃO MOBILE*/
     #home .power-control-wrapper {
         position: fixed;
-        bottom: 60px;
-        left: 20px;
+        bottom: calc(var(--footer-offset) + 18px + env(safe-area-inset-bottom));      
         margin: 0;    
         display: flex;
         flex-direction: column;
