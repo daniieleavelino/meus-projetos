@@ -479,7 +479,7 @@ input:checked+.slider:before {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 15px;
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.4), inset 0 0 8px rgba(255, 0, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -757,6 +757,7 @@ input:checked+.slider:before {
         height: 100dvh;          
         width: 100%;
         padding-top: 20vh; 
+        overflow: hidden; /* Remove o scroll apenas na home */
     }
 
     .home-inner {
