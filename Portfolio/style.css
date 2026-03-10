@@ -480,7 +480,7 @@ input:checked+.slider:before {
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.4), inset 0 0 8px rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4), inset 0 0 8px rgba(255, 0, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -552,7 +552,7 @@ input:checked+.slider:before {
     max-width: 650px;
     margin: 30px auto 0;
     font-style: normal;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.25), inset 0 0 5px rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.25), inset 0 0 5px rgba(0, 255, 255, 0.1);
 }
 
 .contact-item {
