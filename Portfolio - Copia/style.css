@@ -70,32 +70,9 @@ body {
     height: 100%;
 }
 
-/* ==================== EFEITOS VISUAIS DE FUNDO ==================== */
+/* A imagem de fundo pertence à Home; este elemento antigo não é mais usado. */
 .bg-overlay {
-    position: fixed;
-    inset: 0;
-    background-size: cover;
-    background-position: left;
-    z-index: -2;
-    transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
-}
-
-.bg-overlay.default-bg {
-    background: 
-        linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 75%), 
-        url('images/fundo-desktop.webp');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
-.bg-overlay.alt-bg {
-    background: radial-gradient(circle at top, rgba(10, 10, 10, 0.98), #050505 60%, #020203 100%);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+    display: none;
 }
 
 .container {
@@ -109,7 +86,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3px 0;
+    padding: 12px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -145,6 +122,11 @@ nav {
 .nav-links a:hover {
     color: var(--neon-pink);
     text-shadow: 0 0 8px var(--neon-pink);
+}
+
+#link-contato {
+    color: var(--neon-pink);
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.45);
 }
 
 .nav-links a.active-link {
@@ -204,6 +186,23 @@ nav {
     align-items: stretch;
     padding: 0 20px;
     min-height: 100dvh;
+    isolation: isolate;
+    border-bottom: 3px solid rgba(0, 255, 255, 0.5);
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 75%),
+        url('images/fundo-desktop.webp') center / contain no-repeat;
+    background-color: var(--bg-color);
+}
+
+#sobre-mim {
+    background-color: var(--bg-color);
 }
 
 .home-inner {
@@ -675,14 +674,10 @@ input:checked+.slider:before {
 
 /* ==================== NOTEBOOK ==================== */
 @media (max-width: 1600px) {
-
-    .bg-overlay.default-bg {
+    #home::before {
         background:
-            linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%),
-            url('images/fundo-notebook.webp');
-
-        background-size: cover;
-        background-position: bottom;
+            linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%),
+            url('images/fundo-notebook.webp') bottom / cover no-repeat;
     }
 
     .home-inner {
@@ -705,15 +700,11 @@ input:checked+.slider:before {
 
 /* ==================== MOBILE ==================== */
 @media (max-width: 768px) {
-    .bg-overlay.default-bg {
-    background: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%), 
-        url('images/fundo-mobile.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
+    #home::before {
+        background:
+            linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%),
+            url('images/fundo-mobile.webp') center / cover no-repeat;
+    }
 
     .logo {
         font-size: 0.8rem;

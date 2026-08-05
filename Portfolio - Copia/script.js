@@ -49,24 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const homeSection = document.getElementById('home');
-    const bgOverlay = document.querySelector('.bg-overlay');
-
-    if (homeSection && bgOverlay) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    bgOverlay.classList.add('default-bg');
-                    bgOverlay.classList.remove('alt-bg');
-                } else {
-                    bgOverlay.classList.remove('default-bg');
-                    bgOverlay.classList.add('alt-bg');
-                }
-            });
-        }, { threshold: 0.3 });
-
-        observer.observe(homeSection);
-    }
 });
 
 // ==================== FUNÇÕES DE EFEITO NEON ====================

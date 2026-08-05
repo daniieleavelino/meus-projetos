@@ -160,7 +160,8 @@ nav {
     z-index: 1;
     display: block;
     width: 100%;
-    padding: 80px 0 40px;
+    /* Espaçamento vertical suave entre as seções do portfólio. */
+    padding: 80px 0 70px;
     overflow: visible;
     opacity: 1;
     transform: none;
@@ -187,7 +188,6 @@ nav {
     padding: 0 20px;
     min-height: 100dvh;
     isolation: isolate;
-    border-bottom: 3px solid rgba(0, 255, 255, 0.5);
 }
 
 #home::before {
@@ -196,6 +196,7 @@ nav {
     inset: 0;
     z-index: -1;
     background:
+        linear-gradient(to bottom, transparent 68%, var(--bg-color) 100%),
         linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 75%),
         url('images/fundo-desktop.webp') center / contain no-repeat;
     background-color: var(--bg-color);
@@ -278,7 +279,8 @@ nav {
 
 /* CONTAINER DO BOTÃO LIGA/DESLIGA - DESKTOP */
 .power-control-wrapper {
-    position: fixed;
+    /* Fica ancorado à Home e sai da tela ao rolar para outra seção. */
+    position: absolute;
     bottom: 50px;
     left: 20px;
     margin: 0;
@@ -528,11 +530,16 @@ input:checked+.slider:before {
 }
 
 /* ==================== CONTATO ==================== */
+#contato {
+    /* Mantém um respiro confortável acima do footer fixo. */
+    padding-bottom: calc(var(--footer-offset) + 40px);
+}
+
 .contact-block {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 40px;
+    padding: 48px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
     border-radius: 20px;
@@ -676,6 +683,7 @@ input:checked+.slider:before {
 @media (max-width: 1600px) {
     #home::before {
         background:
+            linear-gradient(to bottom, transparent 68%, var(--bg-color) 100%),
             linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 60%),
             url('images/fundo-notebook.webp') bottom / cover no-repeat;
     }
@@ -702,6 +710,7 @@ input:checked+.slider:before {
 @media (max-width: 768px) {
     #home::before {
         background:
+            linear-gradient(to bottom, transparent 68%, var(--bg-color) 100%),
             linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%),
             url('images/fundo-mobile.webp') center / cover no-repeat;
     }
@@ -761,7 +770,7 @@ input:checked+.slider:before {
 
     /* BOTÃO MOBILE*/
     #home .power-control-wrapper {
-        position: fixed;
+        position: absolute;
         bottom: calc(var(--footer-offset) + 18px + env(safe-area-inset-bottom));      
         margin: 0;    
         display: flex;
