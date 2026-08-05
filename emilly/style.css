@@ -1,0 +1,350 @@
+/* ============================================ */
+/* VARIÁVEIS E GERAIS */
+/* ============================================ */
+
+/* Definição de cores e paleta principal */
+:root {
+--primary-pink: #D989A2;     /* Rosa sofisticado */
+--secondary-green: #A8C6A8;  /* Verde sálvia */
+--accent-gold: #C5A059;      /* Dourado para detalhes */
+--text-dark: #2D2D2D;        /* Texto principal */
+--text-muted: #5A5A5A;       /* Texto secundário */
+--bg-light: #F8F9FA;         /* Fundo claro */
+--white: #ffffff;            /* Branco puro */
+}
+
+/* Configurações gerais do corpo da página (fonte, cor do texto, fundo e espaçamento entre linhas) */
+body {
+font-family: 'Montserrat', sans-serif;
+color: var(--text-dark);
+background-color: var(--bg-light);
+overflow-x: hidden;
+line-height: 1.6;
+}
+
+/* Fonte estilizada para componentes que exigem aspecto de escrita manual (logo/nome) */
+.logo-font {
+font-family: 'Great Vibes', cursive !important;
+font-size: 2rem;
+color: var(--text-dark) !important;
+}
+
+/* Fonte para todos os níveis de títulos principais */
+h1, h2, h3, h4 {
+font-family: 'Playfair Display', serif;
+}
+
+/* Aplica a cor rosa principal para dar destaque em partes específicas de um texto */
+.text-accent {
+color: var(--primary-pink);
+}
+
+/* Estilo padrão para os títulos principais que abrem cada seção */
+.section-title {
+font-size: 2.3rem;
+font-weight: 700;
+color: var(--text-dark);
+}
+
+/* Linha divisória com cor rosa para criar separação visual abaixo dos títulos */
+.divider {
+width: 60px;
+height: 4px;
+background: var(--primary-pink);
+border-radius: 2px;
+}
+
+/* Cor de fundo verde sálvia claro para diferenciar o fundo de algumas seções */
+.bg-light-green {
+background-color: #f2f7f2;
+}
+
+/* ============================================ */
+/* NAVBAR (CABEÇALHO) */
+/* ============================================ */
+
+/* Define o fundo branco semi-transparente e o efeito de desfoque (vidro) da barra superior */
+#mainNav {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+}
+
+/* Remove a linha de sublinhado do container da logo na barra de navegação */
+.navbar-brand {
+text-decoration: none;
+}
+
+/* Define as dimensões do contêiner que guarda o ícone da logo no topo */
+.brand-icon {
+height: 40px;
+width: auto;
+}
+
+/* Ajusta a altura, a proporção e o comportamento de bloco do SVG do ícone no topo */
+.brand-icon svg {
+height: 40px;
+width: auto;
+display: block;
+}
+
+/* Define as dimensões do contêiner que guarda o texto da logo no topo */
+.brand-text {
+height: 24px;
+width: auto;
+}
+
+/* Ajusta a altura, a proporção e o comportamento de bloco do SVG do nome da marca no topo */
+.brand-text svg {
+height: 45px;
+width: auto;
+display: block;
+}
+
+/* Define a espessura da fonte, cor escura e tamanho para os links do menu */
+.nav-link {
+font-weight: 600;
+color: var(--text-dark) !important;
+font-size: 0.85rem;
+}
+
+/* Define cor de fundo rosa, texto branco, borda arredondada, espaçamento interno e efeito de transição para o botão do menu */
+.btn-cta-nav {
+background: var(--primary-pink);
+color: white !important;
+border-radius: 50px;
+padding: 8px 20px !important;
+transition: 0.3s;
+}
+
+/* Troca a cor de fundo do botão do menu para dourado quando o mouse passa por cima */
+.btn-cta-nav:hover {
+background: var(--accent-gold);
+}
+
+/* Força o botão de menu sanduíche (hambúrguer) a aparecer em telas menores que 991.98px */
+@media (max-width: 991.98px) {
+.navbar-toggler {
+    display: block !important;
+}
+}
+
+/* ============================================ */
+/* HERO (INÍCIO) */
+/* ============================================ */
+
+/* Configura a seção inicial definindo altura mínima, fundo com gradiente linear e recuo no topo para evitar a navbar */
+.hero-section {
+min-height: 85vh; /* Altura da seção */
+background: linear-gradient(135deg, #fff 0%, var(--secondary-green) 100%);
+padding-top: 80px; /* REDUZIDO: Estava em 120px, empurrava tudo para baixo */
+}
+
+/* Ajusta o texto secundário da hero definindo tamanho elegante, cor discreta e limitando a largura máxima */
+.hero-section .lead {
+font-size: 1.05rem; /* REDUZIDO: Mais elegante e ocupa menos espaço */
+color: var(--text-muted);
+max-width: 550px;
+}
+
+/* Estilo do botão principal da hero (fundo rosa, texto branco, sem borda, arredondado e com sombra rosa leve) */
+.btn-primary-custom {
+background: var(--primary-pink);
+border: none;
+color: white;
+padding: 15px 40px;
+border-radius: 50px;
+font-weight: 600;
+transition: 0.3s;
+box-shadow: 0 5px 15px rgba(217, 137, 162, 0.3);
+}
+
+/* Faz o botão principal subir levemente, escurecer a cor de fundo e aumentar a sombra ao receber hover */
+.btn-primary-custom:hover {
+transform: translateY(-3px);
+background: #c2768e;
+color: white;
+box-shadow: 0 8px 20px rgba(217, 137, 162, 0.5);
+}
+
+/* Estiliza a imagem da hero cortando as bordas de modo assimétrico moderno e limitando a altura máxima */
+.rounded-custom {
+border-radius: 50px 150px 50px 150px;
+max-height: 500px; /* Evita que fotos verticais estiquem a hero */
+object-fit: cover;
+}
+
+/* ============================================ */
+/* SOBRE A PROFISSIONAL */
+/* ============================================ */
+
+/* Define o corte de bordas assimétrico inverso para a foto que aparece na seção "Sobre" */
+.rounded-custom-alt {
+border-radius: 150px 50px 150px 50px;
+}
+
+/* ============================================ */
+/* ABORDAGEM (TCC) */
+/* ============================================ */
+
+/* Aplica bordas arredondadas, sombra acentuada e uma barra grossa na cor rosa na lateral esquerda do cartão */
+.card-tcc {
+border-radius: 25px;
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+border-left: 8px solid var(--primary-pink);
+}
+
+/* ============================================ */
+/* BENEFÍCIOS */
+/* ============================================ */
+
+/* Estilo base dos cartões de benefícios: fundo branco, espaçamento, bordas arredondadas e sombra suave padrão */
+.benefit-card {
+background: white;
+padding: 45px 25px;
+border-radius: 25px;
+text-align: center;
+height: 100%;
+transition: 0.4s;
+border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Estiliza os ícones dentro dos cartões de benefícios definindo tamanho grande, cor rosa e margem inferior */
+.benefit-card i {
+font-size: 2.8rem;
+color: var(--primary-pink);
+margin-bottom: 20px;
+display: block;
+}
+
+/* Efeito ao passar o mouse: o cartão sobe na tela, ganha uma sombra mais marcante e a borda fica verde sálvia */
+.benefit-card:hover {
+transform: translateY(-12px);
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+border-color: var(--secondary-green);
+}
+
+/* ============================================ */
+/* FAQ (DÚVIDAS FREQUENTES) */
+/* ============================================ */
+
+/* Remove a borda padrão de cada caixa do acordeão, arredonda todos os cantos e adiciona sombra leve */
+.accordion-custom .accordion-item {
+border: none;
+margin-bottom: 15px;
+border-radius: 15px !important;
+overflow: hidden;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Aumenta a espessura da fonte para o título/botão de cada pergunta do acordeão */
+.accordion-button {
+font-weight: 600;
+}
+
+/* Altera a cor de fundo para verde sálvia e mantém o texto escuro na pergunta que estiver com a resposta aberta */
+.accordion-button:not(.collapsed) {
+background-color: var(--secondary-green);
+color: var(--text-dark);
+box-shadow: none;
+}
+
+/* Retira o destaque azul ou contorno padrão gerado pelo navegador ao clicar no botão do acordeão */
+.accordion-button:focus {
+box-shadow: none;
+}
+
+/* ============================================ */
+/* FOOTER (RODAPÉ) */
+/* ============================================ */
+
+/* Força a aplicação da cor de fundo escura e torna todos os textos padrão brancos no rodapé */
+.bg-dark-custom {
+background-color: var(--text-dark) !important;
+color: var(--white);
+}
+
+/* Remove a linha de sublinhado e alinha no centro o container que envolve o logo no rodapé */
+.footer-logo {
+text-decoration: none;
+justify-content: center;
+}
+
+/* Define as dimensões do contêiner que guarda o ícone da marca no rodapé */
+.footer-brand-icon {
+height: 40px;
+width: auto;
+}
+
+/* Define as dimensões do contêiner que guarda o texto da marca no rodapé */
+.footer-brand-name {
+height: 24px;
+width: auto;
+}
+
+/* Ajusta as proporções do SVG da logo em texto no rodapé e o alinha ao centro do bloco */
+.footer-brand-name svg {
+height: 65px;
+width: auto;
+display: block;
+margin: 0 auto;
+}
+
+/* Estilo para fontes da classe logo-font quando estão dentro do rodapé (cor rosa, tamanho grande e leve sombra escura) */
+footer .logo-font {
+color: var(--primary-pink) !important;
+font-size: 2.5rem;
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Diminui a opacidade dos textos de parágrafo dentro do rodapé para dar mais leveza visual */
+footer p {
+color: rgba(255, 255, 255, 0.8);
+}
+
+/* Deixa a linha divisória do rodapé quase transparente */
+footer hr {
+border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo do link de política de privacidade: cor esbranquiçada discreta, sem linha embaixo e transição suave */
+.footer-link {
+color: rgba(255, 255, 255, 0.6); /* Branco suave/transparente */
+text-decoration: none;
+font-size: 0.85rem;
+transition: 0.3s;
+}
+
+/* Muda a cor do link da política de privacidade para rosa e adiciona linha embaixo ao passar o mouse */
+.footer-link:hover {
+color: var(--primary-pink); /* Fica rosa ao passar o mouse */
+text-decoration: underline;
+}
+
+/* ============================================ */
+/* BARRA DE COOKIES E MODAL (LGPD) */
+/* ============================================ */
+
+/* Posiciona a barra de cookies fixada no rodapé da tela, com fundo branco, bordas arredondadas e oculta por padrão */
+.cookie-bar {
+position: fixed;
+bottom: 20px;
+left: 20px;
+right: 20px;
+background: #ffffff;
+border-radius: 15px;
+z-index: 9999;
+border: 1px solid var(--secondary-green);
+display: none; /* Inicialmente oculto via JS */
+}
+
+/* Arredonda totalmente as bordas do conteúdo do modal de privacidade e remove o contorno do navegador */
+.modal-content {
+border-radius: 20px;
+border: none;
+}
+
+/* Pinta de off-white e arredonda apenas os cantos superiores do cabeçalho do modal de privacidade */
+.modal-header {
+background-color: var(--bg-light);
+border-radius: 20px 20px 0 0;
+}

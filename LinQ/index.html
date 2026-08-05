@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- Metadados para SEO, redes sociais e responsividade -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="LinQ Mentoria Linguística">
+  <meta property="og:description" content="Especialização em Espanhol Corporativo para atuação profissional.">
+  <meta property="og:image" content="https://www.linqlinguistica.com.br/imagens/logo.png">
+  <meta property="og:url" content="https://www.linqlinguistica.com.br">
+  <meta property="og:type" content="website">
+  <!-- CORREÇÃO AQUI: adicionei a tag de idioma corretamente -->
+  <meta property="og:locale" content="pt_BR">
+  <meta name="theme-color" content="#F7F4EE">
+  <title>LinQ Mentoria Linguística | Formação em Idiomas para Atuação Profissional</title>
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon_io/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="imagens/android-chrome-192x192.png">
+</head>
+
+<div id="cookie-banner"
+  style="position: fixed; bottom: 20px; left: 20px; width: 90%; max-width: 400px; background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); z-index: 10000; display: none;">
+
+  <p style="font-size: 14px; color: #333; margin-bottom: 15px;">
+    Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa
+    <a href="privacidade.html" style="color: #1f4e5f; font-weight: bold; text-decoration: none;">Política de
+      Privacidade</a>.
+  </p>
+
+  <div style="display: flex; gap: 10px;">
+    <button id="reject-cookies"
+      style="background: #ececec; color: #333; border: none; padding: 10px; border-radius: 20px; cursor: pointer; font-weight: bold; flex: 1; font-size: 13px;">
+      Recusar
+    </button>
+
+    <button id="accept-cookies"
+      style="background: #1f4e5f; color: white; border: none; padding: 10px; border-radius: 20px; cursor: pointer; font-weight: bold; flex: 2; font-size: 13px;">
+      Aceitar
+    </button>
+  </div>
+</div>
+
+<body>
+  <!-- Conteúdo visível do site e navegação principal -->
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+  <header class="site-header" id="topo">
+    <!-- Cabeçalho com marca, logo e menu acessível -->
+    <div class="container nav-container">
+
+      <a class="brand" href="#topo" aria-label="LinQ Mentoria Linguística - Início">
+        <img src="imagens/logo-header.webp" alt="Logo LinQ Mentoria Linguística" class="logo" />
+        <span class="brand-text">
+          <img src="imagens/linq-wordmark.svg" alt="LinQ" class="wordmark wordmark-header" />
+          <span class="brand-sub">MENTORIA LINGUÍSTICA</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav aria-label="Navegação principal">
+        <ul id="main-menu" class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#proposta">Proposta</a></li>
+          <li><a href="#areas">Áreas</a></li>
+          <li><a href="#metodologia">Metodologia</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Área principal do site com seções de apresentação e conteúdo institucional -->
+
+    <section id="home" class="section hero">
+      <!-- Seção Hero: mensagem principal e chamadas para ação -->
+      <div class="container split-grid">
+        <div class="hero-content">
+          <h1>Formação em Idiomas para Atuação Profissional</h1>
+          <p class="lead">Especialização em Espanhol Corporativo, com expansão estratégica para novos idiomas.</p>
+          <div class="cta-group">
+            <a class="btn btn-primary" href="#metodologia">Conheça a Metodologia</a>
+            <a class="btn btn-secondary" href="#contato">Fale com a <img src="imagens/linq-wordmark.svg" alt="LinQ"
+                class="wordmark wordmark-inline" /></a>
+          </div>
+          <div class="hero-image-mobile" role="img" aria-label="ApresentaÃ§Ã£o visual da LinQ"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proposta" class="section">
+      <!-- Seção Proposta: valores e objetivo do programa -->
+      <div class="container split-grid reverse">
+        <div class="institutional-image" role="img" aria-label="Equipe analisando materiais em uma reunião corporativa">
+        </div>
+        <div class="proposta-text">
+          <h2>Nossa Proposta</h2>
+          <p>A proposta da <img src="imagens/linq-wordmark.svg" alt="LinQ" class="wordmark wordmark-inline" /> é
+            transformar o aprendizado em posicionamento.</p>
+          <p>Mais do que aprender o idioma, o aluno desenvolve a capacidade de se <strong>comunicar</strong>, com
+            clareza em <strong>situações reais </strong>— como reuniões, negociações e interações com pessoas de
+            diferentes países.</p>
+          <br>
+          <p>O processo é progressivo e desenvolve a <strong>segurança</strong> necessária para atuar com naturalidade
+            no contexto profissional e internacional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas" class="section alt-bg">
+      <!-- Seção Áreas: oferta de cursos e temas de formação -->
+      <div class="container">
+        <h2>Áreas de Formação</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Espanhol Profissional</h3>
+            <p>Desenvolvimento da comunicação para o ambiente corporativo, com foco em diferentes situações
+              profissionais, como reuniões, apresentações e negociações.</p>
+          </article>
+          <article class="card">
+            <h3>Espanhol para Viagens</h3>
+            <p>Comunicação prática para viagens internacionais, com foco em situações reais, desenvolvendo mais
+              segurança e autonomia.</p>
+          </article>
+          <article class="card">
+            <h3>Espanhol Progressivo</h3>
+            <p>Evolução estruturada do básico ao avançado, com desenvolvimento da comunicação para situações do dia a
+              dia e diferentes contextos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodologia" class="section">
+      <!-- Seção Metodologia: abordagem pedagógica e benefícios do curso -->
+      <div class="container">
+        <h2>Metodologia <img src="imagens/linq-wordmark.svg" alt="LinQ"
+            class="wordmark wordmark-inline wordmark-title" /></h2>
+        <p>Na <strong><img src="imagens/linq-wordmark.svg" alt="LinQ" class="wordmark wordmark-inline" /></strong>,
+          nossa metodologia é desenhada para potencializar o aprendizado de cada aluno, adaptando-se ao <strong>seu
+            estilo de aprendizagem</strong>. Priorizamos a <strong>comunicação prática</strong>, garantindo que o aluno
+          use o idioma desde o primeiro dia. Cada aula integra <strong>contexto cultural</strong>, oferecendo
+          compreensão real do mundo hispânico, e acontece em <strong>turmas reduzidas</strong>, favorecendo atenção
+          personalizada. Nossa <strong>estrutura por níveis</strong> permite evolução consistente e sólida, do básico ao
+          avançado, sempre com foco em resultados concretos.</p>
+      </div>
+    </section>
+
+    <section id="equipe" class="section alt-bg">
+      <!-- Seção Equipe: apresentação dos profissionais e experiência docente -->
+      <div class="container">
+        <h2>Equipe de Ensino</h2>
+        <p>A <strong>Equipe de Ensino da <img src="imagens/linq-wordmark.svg" alt="LinQ"
+              class="wordmark wordmark-inline" /></strong> é conduzida por uma liderança com <strong>18 anos de
+            experiência no idioma</strong>, sendo <strong>9 anos de atuação no ambiente corporativo</strong> e <strong>9
+            anos dedicados ao ensino</strong>.</p>
+        <p>Todos os docentes são profissionais com <strong>vivência internacional</strong> e <strong>formação
+            contínua</strong> dentro da metodologia <img src="imagens/linq-wordmark.svg" alt="LinQ"
+            class="wordmark wordmark-inline" />, garantindo alinhamento pedagógico e <strong>consistência no
+            ensino</strong>.</p>
+
+        <div class="team-grid">
+          <article class="profile-card">
+            <img src="imagens/jakelyne.webp" alt="Foto da integrante da equipe 1">
+            <div class="profile-card-content">
+              <h3>Jakelyne Dourado</h3>
+              <p>Fundadora e <strong>especialista em espanhol profissional</strong>, acompanha de perto o
+                desenvolvimento de cada aluno, conduzindo a mentoria e aplicando a metodologia de <strong>forma
+                  personalizada</strong> e alinhada aos objetivos de cada um.</p>
+            </div>
+          </article>
+          <article class="profile-card">
+            <img src="imagens/magali.webp" alt="Foto do integrante da equipe 2">
+            <div class="profile-card-content">
+              <h3>Magali Rodriguez</h3>
+              <p>Professora nativa <strong>argentina</strong>, com foco na fluência e na comunicação. Tem um estilo
+                dinâmico e proativo, acompanha os alunos no desenvolvimento do <strong>espanhol profissional</strong>,
+                promovendo precisão e segurança ao se expressar.</p>
+            </div>
+          </article>
+          <article class="profile-card">
+            <img src="imagens/jocelyn.webp" alt="Foto da integrante da equipe 3">
+            <div class="profile-card-content">
+              <h3>Jocelyn Xiomara</h3>
+              <p>Professora nativa <strong>venezuelana</strong>, focada na comunicação natural e no desenvolvimento da
+                fluência no <strong>espanhol do dia a dia</strong>. Dedica-se a apoiar cada aluno no seu ritmo, com
+                ênfase na clareza e na confiança ao falar.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <!-- Seção Sobre: origem da marca e proposta diferenciada -->
+      <div class="container">
+        <div class="about-text">
+          <h2>Sobre a <img src="imagens/linq-wordmark.svg" alt="LinQ" class="wordmark wordmark-inline wordmark-title" />
+          </h2>
+          <p>A <img src="imagens/linq-wordmark.svg" alt="LinQ" class="wordmark wordmark-inline" /> nasceu da união entre
+            <strong>vivência prática</strong> no idioma e <strong>experiência no ensino</strong>.
+          </p>
+          <p>Após anos de atuação profissional utilizando o espanhol em <strong>contextos corporativos e
+              internacionais</strong>, surgiu a necessidade de estruturar uma formação que fosse além do ensino
+            tradicional, conectando estratégia, comunicação e aplicação real do idioma.</p>
+          <p>Assim, a <img src="imagens/linq-wordmark.svg" alt="LinQ" class="wordmark wordmark-inline" /> foi criada com
+            o propósito de oferecer uma abordagem mais direcionada, consciente e alinhada às demandas profissionais
+            contemporâneas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contato section-padding">
+      <!-- Seção Contato: informações de contato e formulário de agendamento -->
+      <div class="container grid-2">
+
+        <div class="contato-info">
+          <h2>Fale com a <img src="imagens/linq-wordmark-gold.svg" alt="LinQ"
+              class="wordmark wordmark-inline wordmark-title" /></h2>
+          <p><i class="fab fa-whatsapp" aria-hidden="true"></i> (19) 9 9230-0670</p>
+          <p><i class="fab fa-instagram" aria-hidden="true"></i> @linq.linguistica</p>
+          <p><i class="fas fa-envelope" aria-hidden="true"></i> linq.linguistica@gmail.com</p>
+        </div>
+
+        <div class="contato-form">
+          <h3>Agende uma Aula Diagnóstica</h3>
+          <p class="p2">Sessão introdutória sem custo e sem compromisso.</p>
+
+          <form id="contact-form" action="https://formspree.io/f/xzdydvnj" method="POST">
+            <input id="nome" name="nome" type="text" required placeholder="Seu Nome">
+            <input id="email" name="email" type="email" required placeholder="Seu E-mail">
+            <button class="btn btn-gemini" type="submit">Quero conhecer a metodologia</button>
+            <p id="form-feedback" class="form-feedback"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <!-- Rodapé com direitos autorais e marca -->
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <img src="imagens/linq-wordmark.svg" alt="LinQ" class="wordmark wordmark-inline" />
+        Mentoria Linguística. Todos os direitos reservados | <a href="privacidade.html"
+          class="text-light-gray text-decoration-none" style="opacity: 0.7;">Política de Privacidade</a></p>
+    </div>
+    
+  </footer>
+
+  <!-- Script principal: lógica de navegação e interatividade -->
+  <script src="script.js"></script>
+</body>
+
+</html>

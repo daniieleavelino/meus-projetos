@@ -1,0 +1,884 @@
+﻿/* ===== VARIABLES ===== */
+:root {
+  --bg-main: #F7F4EE;
+  --bg-soft: #FAF7F1;
+  --text-main: #1F4E5F;
+  --text-gold: #C8A04A;
+  --accent-gold: #D79A3A;
+  --white: #ffffff;
+  --shadow: 0 18px 40px rgba(31, 78, 95, 0.1);
+  --radius: 18px;
+}
+
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BASE ===== */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Link de pular para o conteÃºdo */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-150%);
+  background: var(--white);
+  color: var(--text-main);
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+/* sÃ³ aparece quando focado via teclado */
+.skip-link:focus-visible {
+  transform: translateY(1rem);
+}
+
+/* Container centralizado para todo o layout */
+.container {
+  margin-inline: auto;
+  width: min(1120px, 92%);
+}
+
+/* ===== NAVBAR ===== */
+
+/* CabeÃ§alho fixo e com fundo translucido */
+.site-header {
+  background: rgba(247, 244, 238, 0.92);
+  border-bottom: 1px solid rgba(200, 160, 74, 0.15);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+main {
+  padding-top: 4.8rem;
+}
+
+/* Layout interno do header com logo e navegaÃ§Ã£o */
+.nav-container {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+}
+
+/* Link principal da marca com logo e identificaÃ§Ã£o */
+.brand {
+  align-items: flex-start;
+  color: inherit;
+  display: flex;
+  gap: 0.45rem;
+  text-decoration: none;
+}
+
+/* Agrupa os textos da marca e o subtÃ­tulo */
+.brand-text {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  justify-content: flex-start;
+  line-height: 1;
+  margin-left: 0;
+  padding-top: 0.12rem;
+}
+
+/* Texto secundÃ¡rio e subtÃ­tulo da marca */
+.brand-sub {
+  color: var(--text-gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+}
+
+/* DimensÃµes dos elementos da marca */
+.logo,
+.brand-symbol {
+  display: block;
+  flex-shrink: 0;
+  height: 54px;
+  width: 54px;
+}
+
+/* Ajuste de imagem para o logo */
+.logo {
+  object-fit: contain;
+}
+
+/* Ajuste de imagem para o sÃ­mbolo da marca */
+.brand-symbol {
+  object-fit: contain;
+}
+
+/* Lista de navegaÃ§Ã£o principal */
+.menu {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo dos links dentro do menu */
+.menu a {
+  color: var(--text-main);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Estado hover e foco para links do menu */
+.menu a:hover,
+.menu a:focus-visible {
+  color: var(--text-gold);
+}
+
+/* BotÃ£o de menu mobile */
+.menu-toggle {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  height: 42px;
+  width: 42px;
+}
+
+/* Linhas do Ã­cone de menu hamburguer */
+.menu-toggle span {
+  background: var(--text-main);
+  display: block;
+  height: 2px;
+  margin: 7px 0;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+/* Estilo base para tÃ­tulos principais */
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+/* Tamanho responsivo do tÃ­tulo principal */
+h1 {
+  font-size: clamp(2rem, 3.6vw, 3.4rem);
+}
+
+/* Tamanho responsivo dos subtÃ­tulos */
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+/* Texto de destaque e lead do herÃ³i */
+.lead {
+  font-size: 1.1rem;
+  max-width: 56ch;
+}
+
+/* Texto complementar em caixa alta usado em destaques */
+.eyebrow {
+  color: var(--text-gold);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* Base de exibiÃ§Ã£o para logotipo textual */
+.wordmark {
+  display: inline-block;
+  vertical-align: -0.08em;
+}
+
+/* Ajuste vertical padrÃ£o para variaÃ§Ãµes da wordmark */
+.wordmark-inline,
+.wordmark-title,
+.wordmark-header,
+.wordmark-on-dark {
+  vertical-align: -0.12em;
+}
+
+/* Tamanho da wordmark inline em textos */
+.wordmark-inline {
+  height: 1.05em;
+  width: auto;
+}
+
+/* Wordmark usada em tÃ­tulos e chamadas */
+.wordmark-title {
+  height: 1.12em;
+}
+
+/* Wordmark de cabeÃ§alho para o topo do site */
+.wordmark-header {
+  height: 1.78rem;
+  margin-left: 0;
+  width: auto;
+}
+
+.wordmark-on-dark {
+  vertical-align: -0.1em;
+}
+
+/* Ajuste da wordmark em botÃµes */
+.btn .wordmark-inline {
+  height: 1.07em;
+  vertical-align: 0;
+}
+
+/* ===== GLOBAL LAYOUT ===== */
+
+/* EspaÃ§amento vertical padrÃ£o entre seÃ§Ãµes */
+.section {
+  padding: 5rem 0;  scroll-margin-top: 5rem;}
+
+/* Fundo alternativo para seÃ§Ãµes destacadas */
+.alt-bg {
+  background: var(--bg-soft);
+}
+
+/* Grid de duas colunas usada em seÃ§Ãµes principais */
+.split-grid {
+  align-items: center;
+  display: grid;
+  gap: 2.2rem;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+/* Variedade do grid onde o conteÃºdo vem apÃ³s a imagem */
+.split-grid.reverse {
+  grid-template-columns: 1fr 1.1fr;
+}
+
+/* Ãrea de conteÃºdo do hero com espaÃ§amento superior */
+.hero-content {
+  max-width: 100%;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+/* Grid de cards de serviÃ§os e Ã¡reas */
+.cards-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2rem;
+}
+
+/* Imagem institucional de apoio na seÃ§Ã£o de proposta */
+.institutional-image {
+  background-image: url("imagens/proposta.webp");
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
+  min-height: 400px;
+  width: 100%;
+}
+
+/* Texto destacado com borda lateral para chamar atenÃ§Ã£o */
+.proposta-text {
+  border-left: 4px solid var(--text-gold);
+  padding-left: 1.5rem;
+}
+
+/* Texto principal da seÃ§Ã£o Sobre */
+.about-text {
+  text-align: left;
+}
+
+/* CartÃµes de Ã¡rea de formaÃ§Ã£o */
+.card {
+  background: var(--white);
+  border: 1px solid rgba(31, 78, 95, 0.08);
+  border-radius: 14px;
+  border-top: 4px solid var(--accent-gold);
+  box-shadow: 0 6px 18px rgba(31, 78, 95, 0.07);
+  padding: 1.3rem;
+}
+
+/* Grades de perfil e depoimento */
+.team-grid,
+.testimonials-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Layout de trÃªs colunas para a equipe */
+.team-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Layout de duas colunas para depoimentos */
+.testimonials-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* CartÃµes de perfil e depoimento com estilo uniforme */
+.profile-card,
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid rgba(31, 78, 95, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(31, 78, 95, 0.09);
+}
+
+/* Imagem de capa do cartÃ£o de equipe e depoimento */
+.profile-card img,
+.testimonial-card img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Altura fixa da imagem do perfil da equipe */
+.profile-card img {
+  height: 320px;
+}
+
+/* CartÃ£o de depoimento com estrutura flexÃ­vel */
+.testimonial-card {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+}
+
+/* Avatar circular no cartÃ£o de depoimento */
+.testimonial-card img {
+  background: transparent;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(31, 78, 95, 0.12);
+  flex-shrink: 0;
+  height: 84px;
+  width: 84px;
+}
+
+/* EspaÃ§amento interno dos conteÃºdos de cartÃ£o */
+.profile-card-content,
+.testimonial-content {
+  padding: 1.2rem;
+}
+
+.profile-card-content h3 {
+  margin-bottom: 0.6rem;
+}
+
+.testimonial-content {
+  padding: 0;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin: 0;
+}
+
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  padding: 2.5rem 0;
+}
+
+/* ðŸ‘‡ IMAGEM DE FUNDO REAL */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("imagens/fundo-bg.webp");
+  background-size: cover;
+  background-position: right center;
+  z-index: 0;
+}
+
+/* ðŸ‘‡ FADE SUAVE (O SEGREDO DO EFEITO) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(247, 244, 238, 1) 15%,
+    rgba(247, 244, 238, 0.85) 25%,
+    rgba(247, 244, 238, 0.4) 30%,
+    rgba(247, 244, 238, 0) 55%
+  );
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+/* Grupo de chamadas para aÃ§Ã£o no hero */
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.7rem;
+}
+
+.hero-image-mobile {
+  display: none;
+}
+
+/* BotÃµes principais e secundÃ¡rios do site */
+.btn {
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 600;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.95rem 1.6rem;
+  text-decoration: none;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+
+/* AnimaÃ§Ã£o de hover e foco dos botÃµes */
+.btn:hover,
+.btn:focus-visible {
+  box-shadow: 0 8px 18px rgba(31, 78, 95, 0.2);
+  transform: translateY(-2px);
+}
+
+/* BotÃ£o primÃ¡rio com gradiente de destaque */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold), var(--text-gold));
+  box-shadow: 0 10px 20px rgba(215, 154, 58, 0.35);
+  color: var(--white);
+}
+
+/* Hover reduzido para botÃ£o primÃ¡rio */
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+/* BotÃ£o secundÃ¡rio com borda suave */
+.btn-secondary {
+  background: transparent;
+  border-color: rgba(31, 78, 95, 0.35);
+  color: var(--text-main);
+}
+
+/* Hover para botÃ£o secundÃ¡rio */
+.btn-secondary:hover {
+  background: rgba(31, 78, 95, 0.06);
+}
+
+/* ===== CONTACT ===== */
+
+/* EspaÃ§amento vertical extra para a seÃ§Ã£o de contato */
+.section-padding {
+  padding: 80px 0;
+}
+
+/* Grid de duas colunas para conteÃºdo de contato */
+.grid-2 {
+  align-items: center;
+  display: grid;
+  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Fundo escuro para a seÃ§Ã£o de contato */
+.contato {
+  background: var(--text-main);
+  color: var(--white);
+}
+
+/* Container interno da seÃ§Ã£o de contato */
+.contato .container {
+  max-width: 1200px;
+  padding: 0 20px;
+  width: min(1200px, 92%);
+}
+
+/* TÃ­tulo destacado da seÃ§Ã£o de contato */
+.contato h2 {
+  color: var(--text-gold);
+  margin-bottom: 1.5rem;
+}
+
+/* SubtÃ­tulo da Ã¡rea de contato */
+.contato h3 {
+  color: var(--text-main);
+}
+
+/* Texto informativo secundÃ¡rio */
+.p2 {
+  color: var(--text-main);
+}
+
+/* Bloco de informaÃ§Ãµes de contato */
+.contato-info {
+  align-self: start;
+  position: relative;
+}
+
+/* TÃ­tulo interno do bloco de informaÃ§Ãµes */
+.contato-info h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* Texto das informaÃ§Ãµes de contato */
+.contato-info p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Texto auxiliar posicionado acima do bloco */
+.contato-legend {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  font-style: italic;
+  left: 0;
+  position: absolute;
+  top: -1.5rem;
+}
+
+/* Ãcones de contato com alinhamento e espaÃ§amento */
+.contato-info p i {
+  color: var(--text-gold);
+  margin-right: 10px;
+  width: 20px;
+}
+
+/* Bloco de formulÃ¡rio de contato */
+.contato-form {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 40px;
+}
+
+/* CabeÃ§alho do formulÃ¡rio de agendamento */
+.contato-form h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Texto explicativo do formulÃ¡rio */
+.contato-form p {
+  margin-bottom: 1.5rem;
+}
+
+/* Campos de entrada do formulÃ¡rio de contato */
+.contato-form form input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 12px;
+  width: 100%;
+}
+
+/* BotÃ£o de envio do formulÃ¡rio */
+.contato-form button {
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: 700;
+  margin-top: 0;
+  padding: 15px 30px;
+  width: auto;
+}
+
+/* Estilo hover/focus do botÃ£o do formulÃ¡rio */
+.contato-form button:hover,
+.contato-form button:focus-visible {
+  box-shadow: none;
+  transform: none;
+}
+
+/* Estilo do botÃ£o principal do formulÃ¡rio de contato */
+.btn-gemini {
+  background: var(--accent-gold);
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Hover do botÃ£o de envio com cor de destaque */
+.btn-gemini:hover {
+  background: var(--text-gold);
+}
+
+/* Labels dos campos do formulÃ¡rio */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  margin-top: 0.8rem;
+}
+
+/* Campo de formulÃ¡rio com aparÃªncia neutra */
+input,
+textarea {
+  background: #fff;
+  border: 1px solid rgba(31, 78, 95, 0.24);
+  border-radius: 10px;
+  font: inherit;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.85rem;
+  width: 100%;
+}
+
+/* Foco dos campos do formulÃ¡rio */
+input:focus,
+textarea:focus {
+  border-color: var(--accent-gold);
+  outline: 2px solid rgba(215, 154, 58, 0.45);
+}
+
+/* Mensagem de retorno do formulÃ¡rio */
+.form-feedback {
+  font-weight: 500;
+  margin-top: 0.6rem;
+  min-height: 1.2rem;
+}
+
+/* Feedback exibido abaixo do formulÃ¡rio */
+#form-feedback {
+  font-size: 0.95rem;
+  margin-top: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* ===== FOOTER ===== */
+
+/* Ãrea de rodapÃ© com fundo claro e borda superior */
+.site-footer {
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(31, 78, 95, 0.12);
+  padding: var(--space-md) 0;
+}
+
+/* ConteÃºdo interno do rodapÃ© */
+.footer-inner {
+  color: rgba(31, 78, 95, 0.75);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Nota de rodapÃ© sem margens */
+.footer-note {
+  margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 920px) {
+  .nav-container {
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .site-header .container {
+    width: 100%;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    will-change: transform;
+  }
+
+  main {
+    padding-top: 4.8rem;
+  }
+
+  /* ===== LAYOUT GLOBAL ===== */
+  .split-grid,
+  .split-grid.reverse,
+  .cards-grid,
+  .grid-2,
+  .team-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== NAVBAR MOBILE ===== */
+  .menu-toggle {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  nav[aria-label="Navegação principal"] {
+    position: static;
+  }
+
+  .menu {
+    background: var(--white);
+    border: 1px solid rgba(31, 78, 95, 0.12);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    opacity: 0;
+    padding: 0.9rem;
+    pointer-events: none;
+    position: absolute;
+    right: 0.9rem;
+    top: 72px;
+    transform: translateY(-6px);
+    transition: all 0.25s ease;
+    width: min(280px, 92vw);
+  }
+
+  .menu.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .hero::before,
+  .hero::after {
+    content: none;
+    display: none;
+  }
+
+  .hero {
+    background: var(--bg-main);
+    padding-top: 0;
+  }
+
+  .hero .container {
+    min-height: auto;
+    padding-bottom: 0;
+    padding-top: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 34rem;
+    padding-inline: 0.35rem;
+    padding-top: 0;
+    text-align: center;
+    width: 100%;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    line-height: 1.15;
+    margin-bottom: 0;    
+  }
+
+  .hero-content .lead {
+    font-size: clamp(1rem, 3.8vw, 1.1rem);
+    margin: 0;
+    max-width: 30ch;
+    text-align: left;
+  }
+
+  .cta-group {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  .cta-group .btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-image-mobile {
+    background-image: url("imagens/hero-mobile.webp");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+    box-shadow: var(--shadow);
+    display: block;
+    height: clamp(180px, 58vw, 260px);
+    margin: 0 calc(50% - 50vw) 0.75rem;
+    max-width: none;
+    order: -1;
+    width: 100vw;
+  }
+
+  .testimonial-card {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 920px) {
+  .section {
+    padding: 3.25rem 0;
+  }
+
+  .hero {
+    padding: 0 0 3.25rem;
+  }
+
+  .institutional-image {
+    background-image: url("imagens/proposta-mobile.webp");
+    background-position: center top;
+    background-size: cover;
+    border-radius: 0;
+    height: 220px;
+    margin: 0.75rem calc(50% - 50vw) 0;
+    max-width: none;
+    min-height: unset;
+    width: 100vw;
+  }
+
+  .split-grid.reverse {
+    gap: 1.5rem;
+  }
+
+  .proposta-text {
+    border-left: 0;
+    border-top: 4px solid var(--text-gold);
+    padding-left: 0;
+    padding-top: 1.25rem;
+  }
+}

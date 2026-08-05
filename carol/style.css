@@ -1,0 +1,493 @@
+﻿/* =========================
+   VARIAVEIS GLOBAIS
+========================= */
+
+/* Cores principais reutilizadas em todo o site */
+:root {
+    --cor-primaria: #2b2d42;
+    --cor-secundaria: #00a896;
+    --cor-destaque: #f4a261;
+    --cor-fundo: #f8f9fa;
+    --cor-texto: #333333;
+}
+
+/* =========================
+   BASE GLOBAL
+========================= */
+
+/* Estilo geral do corpo da pagina */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    overflow-x: hidden;
+}
+
+/* Titulos principais do site */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 800;
+    color: var(--cor-primaria);
+}
+
+/* Texto com visual academico em serif e italico */
+.texto-academico {
+    font-family: 'Lora', serif;
+    font-style: italic;
+}
+
+/* Botao principal reutilizado nas chamadas para acao */
+.btn-custom {
+    background-color: var(--cor-secundaria);
+    color: white;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+}
+
+/* Estado hover do botao principal */
+.btn-custom:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Animacao base para elementos revelados ao rolar a pagina */
+.animar-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado visivel da animacao de scroll */
+.animar-scroll.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pequeno atraso para animacoes em sequencia */
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+/* Atraso intermediario para animacoes em sequencia */
+.delay-2 {
+    transition-delay: 0.3s;
+}
+
+/* Maior atraso para animacoes em sequencia */
+.delay-3 {
+    transition-delay: 0.5s;
+}
+
+/* Fundo marinho usado em blocos de destaque */
+.bg-marinho {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+/* Titulo h2 com cor de destaque sobre fundo marinho */
+.bg-marinho h2 {
+    color: var(--cor-destaque);
+}
+
+/* Titulos claros sobre secoes com fundo marinho */
+.bg-marinho h1,
+.bg-marinho h3,
+.bg-marinho h4 {
+    color: white;
+}
+
+/* Transicao suave para links e textos com destaque ao passar o mouse */
+.hover-destaque {
+    transition: color 0.3s ease;
+}
+
+/* Estado hover para textos e links de destaque */
+.hover-destaque:hover {
+    color: var(--cor-destaque) !important;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+/* Icone da marca no cabecalho */
+.brand-icon {
+    color: var(--cor-secundaria);
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+/* Borda do botao hamburguer da navegacao */
+.navbar-toggler {
+    border: 1px solid rgba(43, 45, 66, 0.2);
+}
+
+/* Destaque visual ao focar o botao hamburguer */
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 168, 150, 0.2);
+}
+
+/* =========================
+   HERO
+========================= */
+
+/* Bloco principal de abertura da pagina */
+.hero-section {
+    background: linear-gradient(135deg, #ffffff 0%, #eef2f3 100%);
+    padding: 64px 0 100px;
+    border-bottom: 5px solid var(--cor-destaque);
+    position: relative;
+}
+
+/* Tipografia reforcada para o titulo principal do hero */
+.hero-section h2.display-4,
+.hero-section h2 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+}
+
+/* Imagem principal circular do hero */
+.hero-image {
+    width: min(100%, 420px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 10px solid white;
+    border-radius: 50%;
+}
+
+/* Wrapper da imagem do hero para garantir exibicao correta do picture */
+.hero-media-wrap picture {
+    display: block;
+}
+
+/* =========================
+   SOBRE
+========================= */
+
+/* Imagem da secao sobre */
+.about-image {
+
+    /* largura responsiva */
+    width: 100%;
+
+    /* tamanho maximo reduzido */
+    max-width: 280px;
+
+    /* mantem proporcao */
+    height: auto;
+
+    /* evita distorcao */
+    object-fit: cover;
+
+    /* bordas arredondadas */
+    border-radius: 20px;
+
+    /* sombra elegante */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+
+}
+
+/* =========================
+   DIFERENCIAIS
+========================= */
+
+/* Icones de destaque da secao de diferenciais */
+.icone-destaque {
+    color: var(--cor-destaque);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   METODOLOGIA
+========================= */
+
+/* Card base da secao metodologia */
+.card-metodologia {
+    border: none;
+    border-left: 5px solid var(--cor-secundaria);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+/* Efeito visual do card de metodologia ao passar o mouse */
+.card-metodologia:hover {
+    transform: scale(1.03);
+    border-left-color: var(--cor-destaque);
+}
+
+/* =========================
+   DEPOIMENTOS
+========================= */
+
+/* Estrutura externa do carrossel de depoimentos */
+.depoimentos-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Area visivel do carrossel que esconde o excesso lateral */
+.depo-viewport {
+    flex: 1 1 auto;
+    overflow: hidden;
+    min-width: 0;
+}
+
+/* Trilho horizontal que movimenta os cards de depoimento */
+.depo-track {
+    display: flex;
+    gap: 18px;
+    transform: translateX(0);
+    transition: transform 0.45s cubic-bezier(.22, .9, .34, 1);
+    will-change: transform;
+}
+
+/* Card individual de depoimento */
+.depo-card {
+    min-width: 320px;
+    max-width: 420px;
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.06);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Avatar circular do depoimento */
+.depo-avatar {
+    width: 85px;
+    height: 85px;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 85px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border: 3px solid var(--cor-secundaria);
+    margin-bottom: 0;
+}
+
+/* Texto principal do depoimento */
+.depo-text {
+    margin: 0 0 6px 0;
+    color: var(--cor-primaria);
+    font-weight: 600;
+}
+
+/* Assinatura do autor do depoimento */
+.depo-author {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Botao de navegacao do carrossel */
+.depo-btn {
+    background: white;
+    border: 1px solid rgba(43, 45, 66, 0.12);
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    z-index: 2;
+}
+
+/* Estado hover dos botoes do carrossel */
+.depo-btn:hover {
+    color: var(--cor-secundaria);
+    transform: translateY(-2px);
+}
+
+/* Estado desabilitado dos botoes do carrossel */
+.depo-btn[disabled] {
+    opacity: 0.35;
+    cursor: default;
+}
+
+/* =========================
+   COOKIES
+========================= */
+
+/* Banner fixo de consentimento de cookies */
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(43, 45, 66, 0.95);
+    color: white;
+    padding: 15px 20px;
+    z-index: 9999;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out, visibility 0s linear 0.5s;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Estado visivel do banner de cookies */
+#cookie-banner.show {
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* =========================
+   RESPONSIVO TABLET E NOTEBOOK PEQUENO
+========================= */
+
+@media (max-width: 991.98px) {
+    /* Caixa expandida do menu mobile */
+    .navbar-collapse {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: #ffffff;
+        border-radius: 1rem;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Alinhamento vertical dos itens da navegacao em telas menores */
+    .navbar-nav {
+        align-items: stretch !important;
+        gap: 0.5rem;
+    }
+
+    /* Espacamento dos links da navegacao em telas menores */
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+    }
+
+    /* Botao da navegacao ocupando toda a largura no mobile menu */
+    .navbar-nav .btn-custom {
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Ajustes de espacamento e alinhamento do hero em tablet */
+    .hero-section {
+        padding: 48px 0 72px;
+        text-align: center;
+    }
+
+    /* Reducao responsiva do titulo principal do hero */
+    .hero-section .display-4 {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    /* Ajuste do texto de destaque em secoes principais */
+    .hero-section .lead,
+    #sobre .lead,
+    #diferenciais .lead {
+        font-size: 1rem;
+    }
+
+    /* Reducao do espacamento interno em secoes principais */
+    #sobre .container,
+    #metodologia .container,
+    #depoimentos .container {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Banner de cookies com layout centralizado em tablet */
+    #cookie-banner {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    /* Botao do banner de cookies ocupando toda a largura */
+    #cookie-banner .btn {
+        width: 100%;
+    }
+}
+
+/* =========================
+   RESPONSIVO CELULAR
+========================= */
+
+@media (max-width: 767.98px) {
+    /* Botao principal com largura total em celular */
+    .btn-custom {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    /* Wrapper da imagem do hero expandido ate as bordas da tela */
+    .hero-media-wrap {
+        margin-inline: calc(50% - 50vw);
+    }
+
+    /* Imagem do hero em formato panoramico no celular */
+    .hero-image {
+        width: 100vw;
+        max-width: none;
+        aspect-ratio: 16 / 10;
+        border-width: 0;
+        border-radius: 0;
+        display: block;
+    }
+
+    /* Imagem da secao sobre com largura reduzida em celular */
+    .about-image {
+        width: min(100%, 300px);
+    }
+
+    /* Ajuste de espacamento e altura do carrossel de depoimentos */
+    .depoimentos-wrapper {
+        gap: 8px;
+        align-items: stretch;
+    }
+
+    /* Botao lateral do carrossel adaptado para celular */
+    .depo-btn {
+        width: 38px;
+        height: auto;
+        min-height: 100%;
+        font-size: 1.6rem;
+        padding: 0;
+    }
+
+    /* Card de depoimento em coluna no celular */
+    .depo-card {
+        min-width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 16px;
+    }
+
+    /* Avatar do depoimento com tamanho reduzido no celular */
+    .depo-avatar {
+        width: 72px;
+        height: 72px;
+        flex-basis: 72px;
+    }
+}
+
