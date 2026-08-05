@@ -281,7 +281,7 @@ nav {
 .power-control-wrapper {
     /* Fica ancorado à Home e sai da tela ao rolar para outra seção. */
     position: absolute;
-    bottom: 50px;
+    bottom: 85px;
     left: 20px;
     margin: 0;
     display: flex;
