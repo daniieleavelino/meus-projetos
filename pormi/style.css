@@ -1,0 +1,485 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            /* =========================================
+   VARIÁVEIS DE CORES (Baseadas na Marca)
+   ========================================= */
+:root {
+    --gold-primary: #C5A059; /* Dourado suave e elegante */
+    --gold-hover: #D4AF37;   /* Dourado mais vivo para interações */
+    --bg-sand: #F9F6F0;      /* Bege bem clarinho/Off-White */
+    --text-dark: #2C2C2C;    /* Grafite (melhor que preto absoluto) */
+}
+
+/* =========================================
+   TIPOGRAFIA & GERAL
+   ========================================= */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.text-gold {
+    color: var(--gold-primary) !important;
+}
+
+.bg-sand {
+    background-color: var(--bg-sand);
+}
+
+.bg-dark {
+    background-color: #1A1A1A !important;
+}
+
+.letter-spacing-1 {
+    letter-spacing: 2px;
+}
+
+.py-spacing {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.max-w-700 {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.rounded-custom {
+    border-radius: 12px;
+}
+
+.shadow-soft {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.hover-gold:hover {
+    color: var(--gold-hover) !important;
+}
+
+/* =========================================
+   AVISO DE COOKIES (LGPD)
+   ========================================= */
+.cookie-banner {
+    position: fixed;
+    bottom: -150px; /* Começa escondido abaixo da tela */
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98); /* Fundo branco com levíssima transparência */
+    border-top: 2px solid var(--gold-primary);
+    padding: 1.2rem 0;
+    z-index: 9999;
+    opacity: 0;
+    backdrop-filter: blur(10px); /* Efeito de vidro esfumaçado igual aos iPhones */
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Animação extremamente suave */
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+}
+
+.cookie-banner.show {
+    bottom: 0;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .cookie-banner {
+        padding: 1.5rem 0; /* Um pouco mais de espaço no celular para facilitar o clique no botão */
+    }
+}
+
+/* =========================================
+   BOTÕES PERSONALIZADOS
+   ========================================= */
+.btn-gold {
+    background-color: var(--gold-primary);
+    color: #fff;
+    border: 1px solid var(--gold-primary);
+    border-radius: 0; /* Bordas retas ou levemente arredondadas dão ar de grife */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.4s ease;
+}
+
+.btn-gold:hover {
+    background-color: transparent;
+    color: var(--gold-primary);
+    border-color: var(--gold-primary);
+}
+
+.btn-gold-outline {
+    background-color: transparent;
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    transition: all 0.4s ease;
+}
+
+.btn-gold-outline:hover {
+    background-color: var(--gold-primary);
+    color: #fff;
+}
+
+/* =========================================
+   ESTILIZAÇÃO DA LOGO SVG
+   ========================================= */
+
+/* Logo na Navbar: Tamanho delicado para não "engordar" a barra */
+.nav-logo {
+    height: 55px; /* Altura ideal para navbars de luxo */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito sutil ao passar o mouse na logo */
+.navbar-brand:hover .nav-logo {
+    transform: scale(1.05);
+}
+
+/* Logo no Footer: Um pouco mais imponente */
+.footer-brand-img {
+    height: 55px; /* Destaque maior no encerramento da página */
+    width: auto;
+    /* Se a logo for muito clara e o fundo do footer for o Grafite (#181818), 
+       ela vai brilhar perfeitamente. */
+}
+
+/* Ajuste para Mobile: Diminuir um pouco a logo no celular */
+@media (max-width: 768px) {
+    .nav-logo {
+        height: 35px;
+    }
+    .footer-brand-img {
+        height: 60px;
+    }
+}
+
+/* =========================================
+   NAVBAR & SCROLL
+   ========================================= */
+.transition-nav {
+    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    padding: 1.5rem 0;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.nav-scrolled {
+    background-color: rgba(249, 246, 240, 0.98);
+    padding: 0.8rem 0;
+    border-bottom-color: rgba(197, 160, 89, 0.32);
+    box-shadow: 0 10px 28px rgba(44, 44, 44, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-scrolled .nav-link, 
+.nav-scrolled .navbar-brand {
+    color: var(--text-dark) !important;
+}
+
+.nav-scrolled .nav-link:hover,
+.nav-scrolled .nav-link:focus,
+.nav-scrolled .nav-link.active {
+    color: var(--gold-primary) !important;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--gold-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-scrolled .navbar-collapse.show,
+.nav-scrolled .navbar-collapse.collapsing {
+    background-color: rgba(249, 246, 240, 0.98);
+}
+
+.custom-toggler {
+    border: none;
+}
+
+.custom-toggler:focus {
+    box-shadow: none;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero-section {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('imagens/buques/6.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito parallax luxuoso */
+}
+
+.subtitle-gold {
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* =========================================
+   SERVIÇOS (Cards)
+   ========================================= */
+/* SOBRE */
+#sobre .image-frame {
+    max-width: 430px;
+    margin: 0 auto;
+}
+
+#sobre .image-frame img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 991.98px) {
+    #sobre .image-frame {
+        max-width: 360px;
+    }
+}
+
+@media (min-width: 992px) {
+    #sobre .row {
+        align-items: stretch !important;
+    }
+
+    #sobre .row > .col-lg-6:first-child {
+        display: flex;
+        justify-content: center;
+    }
+
+    #sobre .image-frame {
+        width: 100%;
+        height: 100%;
+    }
+
+    #sobre .image-frame img {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+}
+
+.img-zoom-wrapper {
+    position: relative;
+}
+
+.img-zoom-wrapper img {
+    transition: transform 0.8s ease;
+}
+
+.service-card:hover .img-zoom-wrapper img {
+    transform: scale(1.05); /* Efeito suave de aproximação ao passar o mouse */
+}
+
+/* =========================================
+   GALERIA MASONRY (Estilo Pinterest)
+   ========================================= */
+.masonry-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+}
+
+.masonry-grid img {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+}
+
+.masonry-grid img:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.1);
+}
+
+/* Responsividade do Masonry */
+@media (max-width: 992px) {
+    .masonry-grid { column-count: 2; }
+}
+@media (max-width: 576px) {
+    .masonry-grid { column-count: 1; }
+}
+
+/* =========================================
+   ACCORDION (FAQ) - Retirando o estilo padrão do Bootstrap
+   ========================================= */
+.custom-accordion .accordion-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.custom-accordion .accordion-button {
+    background-color: transparent;
+    color: var(--text-dark);
+    box-shadow: none;
+    padding: 1.5rem 0;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--gold-primary);
+}
+
+.custom-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C5A059'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+.custom-accordion .accordion-body {
+    padding: 0 0 1.5rem 0;
+}
+
+/* =========================================
+   GALERIA & FILTROS (galeria.html)
+   ========================================= */
+
+/* Botões de Filtro */
+.filter-btn {
+    background-color: transparent;
+    color: var(--text-dark);
+    border: 1px solid transparent;
+    border-radius: 30px; /* Mais curvo para suavidade */
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: var(--gold-primary);
+}
+
+.filter-btn.active {
+    background-color: var(--gold-primary);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3); /* Sombra usando a cor base do ouro rico */
+}
+
+/* Cards da Galeria */
+.gallery-card {
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 4/5; /* Mantém as fotos uniformes numa proporção elegante de retrato */
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que as fotos não fiquem distorcidas */
+    transition: transform 0.6s ease;
+}
+
+/* Efeito Hover (Lupa) */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(24, 24, 24, 0.4); /* Fundo escuro transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-card:hover .gallery-img {
+    transform: scale(1.05); /* Zoom in leve na foto por trás do fundo escuro */
+}
+
+/* Animação suave para os filtros */
+.gallery-item {
+    transition: all 0.4s ease-in-out;
+}
+.gallery-item.hide {
+    display: none;
+}
+
+/* =========================================
+   CARROSSEL DE DEPOIMENTOS (Correção de Sobreposição)
+   ========================================= */
+#carouselDepoimentos .carousel-inner {
+    /* Cria uma "Safe Zone" de 12% nas laterais para abrigar as setas */
+    padding: 0 12%; 
+}
+
+#carouselDepoimentos .carousel-control-prev,
+#carouselDepoimentos .carousel-control-next {
+    /* Reduz a largura invisível da seta para que não sobreponha o clique do texto */
+    width: 10%; 
+}
+
+/* Ajuste fino para telas de celular (Mobile) */
+@media (max-width: 768px) {
+    #carouselDepoimentos .carousel-inner {
+        /* No celular, o espaço é menor, então garantimos que as setas não esbarrem */
+        padding: 0 15%; 
+    }
+    
+    /* Deixamos os ícones das setas levemente menores e mais delicados no mobile */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+/* =========================================
+   CARROSSEL (Fim do Efeito Pula-Pula)
+   ========================================= */
+#carouselDepoimentos .carousel-item {
+    /* Define uma altura fixa segura. O espaço em branco extra nos textos 
+       menores será mantido, garantindo que a página não fique saltando. */
+    min-height: 220px; 
+}
+
+/* Ajuste Responsivo para Mobile */
+@media (max-width: 768px) {
+    #carouselDepoimentos .carousel-item {
+        /* No celular, a tela é estreita e o texto quebra em mais linhas.
+           Portanto, a altura mínima precisa ser um pouco maior. */
+        min-height: 320px;
+    }
+}
+
