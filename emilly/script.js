@@ -4,6 +4,15 @@ AOS.init({
     once: true
 });
 
+// Mantém a primeira dobra preenchida: home + navbar = altura visível da tela.
+function updateNavbarHeight() {
+    const nav = document.getElementById('mainNav');
+    document.documentElement.style.setProperty('--navbar-height', `${nav.offsetHeight}px`);
+}
+
+window.addEventListener('resize', updateNavbarHeight);
+window.addEventListener('load', updateNavbarHeight);
+
 // Efeito de mudar fundo da Navbar ao rolar
 window.addEventListener('scroll', function() {
     const nav = document.querySelector('#mainNav');
@@ -21,6 +30,9 @@ const navLinks = document.querySelectorAll('.nav-link');
 const menuToggle = document.getElementById('navbarNav');
 const navbar = document.getElementById('mainNav');
 const navbarToggler = document.querySelector('.navbar-toggler');
+
+menuToggle.addEventListener('shown.bs.collapse', updateNavbarHeight);
+menuToggle.addEventListener('hidden.bs.collapse', updateNavbarHeight);
 
 navLinks.forEach((l) => {
     l.addEventListener('click', () => {
